@@ -7,6 +7,14 @@ const app = express();
 const server = http.createServer(app);
 const io = socketIo(server);
 
+// Désactiver le cache pour forcer le rechargement des fichiers
+app.use((req, res, next) => {
+  res.set('Cache-Control', 'no-store, no-cache, must-revalidate, private');
+  res.set('Pragma', 'no-cache');
+  res.set('Expires', '0');
+  next();
+});
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 const connectedUsers = new Map();
