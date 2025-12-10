@@ -1,7 +1,7 @@
 {
-  "name": "secure-chat-app",
+  "name": "miroof-chat",
   "version": "1.0.0",
-  "description": "Application de chat sécurisée et chiffrée avec avatars colorés",
+  "description": "Application de chat en temps réel avec avatars colorés",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",

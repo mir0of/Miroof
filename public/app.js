@@ -125,10 +125,9 @@ messageForm.addEventListener('submit', async (e) => {
     const message = messageInput.value.trim();
     if (!message) return;
 
-    const encryptedMessage = await crypto_handler.encrypt(message, encryptionKey);
-
+    // Envoi du message en clair (chiffrement désactivé)
     socket.emit('send_message', {
-        message: encryptedMessage
+        message: message
     });
 
     messageInput.value = '';
@@ -152,8 +151,8 @@ socket.on('user_left', (data) => {
 });
 
 socket.on('new_message', async (data) => {
-    const decryptedMessage = await crypto_handler.decrypt(data.message, encryptionKey);
-    displayMessage(data, decryptedMessage);
+    // Affichage du message en clair (déchiffrement désactivé)
+    displayMessage(data, data.message);
 });
 
 socket.on('system_message', (data) => {
