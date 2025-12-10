@@ -13,12 +13,54 @@ Application de chat en temps réel avec chiffrement de bout en bout (E2E). Les m
 
 ## 🚀 Installation
 
-### Prérequis
+### Option 1 : Avec Docker (Recommandé) 🐳
 
+#### Prérequis
+- Docker
+- Docker Compose
+
+#### Étapes d'installation
+
+1. Cloner le repository :
+```bash
+git clone <url-du-repo>
+cd Miroof
+```
+
+2. Démarrer l'application avec Docker Compose :
+```bash
+docker-compose up -d
+```
+
+3. Ouvrir votre navigateur sur :
+```
+http://localhost:3000
+```
+
+#### Commandes Docker utiles
+
+**Arrêter l'application :**
+```bash
+docker-compose down
+```
+
+**Voir les logs :**
+```bash
+docker-compose logs -f
+```
+
+**Rebuild l'image après des modifications :**
+```bash
+docker-compose up -d --build
+```
+
+### Option 2 : Installation traditionnelle
+
+#### Prérequis
 - Node.js (version 14 ou supérieure)
 - npm ou yarn
 
-### Étapes d'installation
+#### Étapes d'installation
 
 1. Cloner le repository :
 ```bash
