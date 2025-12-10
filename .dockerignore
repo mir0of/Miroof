@@ -1,0 +1,25 @@
+# Dépendances
+node_modules
+npm-debug.log
+
+# Git
+.git
+.gitignore
+
+# Documentation
+README.md
+*.md
+
+# Fichiers de développement
+.vscode
+.idea
+*.log
+
+# Fichiers système
+.DS_Store
+Thumbs.db
+
+# Docker
+Dockerfile
+docker-compose.yml
+.dockerignore
