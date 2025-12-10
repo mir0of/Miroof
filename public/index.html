@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Sécurisé</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="login-container">
+        <div class="login-box">
+            <h1>🔒 Chat Sécurisé</h1>
+            <p class="subtitle">Messages chiffrés de bout en bout</p>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="username">Pseudo</label>
+                    <input type="text" id="username" placeholder="Entrez votre pseudo" required maxlength="20">
+                </div>
+                <div class="form-group">
+                    <label for="color">Couleur de l'avatar</label>
+                    <div class="color-picker">
+                        <input type="radio" name="color" value="#FF6B6B" id="color1" required>
+                        <label for="color1" style="background-color: #FF6B6B;"></label>
+
+                        <input type="radio" name="color" value="#4ECDC4" id="color2">
+                        <label for="color2" style="background-color: #4ECDC4;"></label>
+
+                        <input type="radio" name="color" value="#45B7D1" id="color3">
+                        <label for="color3" style="background-color: #45B7D1;"></label>
+
+                        <input type="radio" name="color" value="#FFA07A" id="color4">
+                        <label for="color4" style="background-color: #FFA07A;"></label>
+
+                        <input type="radio" name="color" value="#98D8C8" id="color5">
+                        <label for="color5" style="background-color: #98D8C8;"></label>
+
+                        <input type="radio" name="color" value="#F7DC6F" id="color6">
+                        <label for="color6" style="background-color: #F7DC6F;"></label>
+
+                        <input type="radio" name="color" value="#BB8FCE" id="color7">
+                        <label for="color7" style="background-color: #BB8FCE;"></label>
+
+                        <input type="radio" name="color" value="#85C1E2" id="color8">
+                        <label for="color8" style="background-color: #85C1E2;"></label>
+                    </div>
+                </div>
+                <button type="submit" class="btn-primary">Rejoindre le chat</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="chat-container" style="display: none;">
+        <div class="chat-header">
+            <div class="header-left">
+                <h2>🔒 Chat Sécurisé</h2>
+                <span class="encryption-status">Chiffré E2E</span>
+            </div>
+            <div class="header-right">
+                <span id="user-info"></span>
+                <button id="logout-btn" class="btn-secondary">Déconnexion</button>
+            </div>
+        </div>
+
+        <div class="chat-content">
+            <div class="sidebar">
+                <h3>Utilisateurs connectés (<span id="user-count">0</span>)</h3>
+                <ul id="users-list"></ul>
+            </div>
+
+            <div class="chat-main">
+                <div id="messages-container"></div>
+
+                <div class="message-input-container">
+                    <form id="message-form">
+                        <input type="text" id="message-input" placeholder="Tapez votre message..." autocomplete="off" required>
+                        <button type="submit" class="btn-send">Envoyer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
