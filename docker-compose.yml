@@ -13,8 +13,8 @@ services:
       - PORT=3000
     restart: unless-stopped
     networks:
-      - chat-network
+      - reseau_proxy_npm
 
 networks:
-  chat-network:
-    driver: bridge
+  reseau_proxy_npm:
+    external: true
